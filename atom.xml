@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Rollinon的博客</title>
+  
+  <subtitle>Keep Going</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://rollinon.fun/"/>
+  <updated>2021-08-21T15:12:46.298Z</updated>
+  <id>https://rollinon.fun/</id>
+  
+  <author>
+    <name>Rollinon</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CTFHub中SSRF使用POST</title>
+    <link href="https://rollinon.fun/2021/08/21/ctfhub-zhong-ssrf-shi-yong-post/"/>
+    <id>https://rollinon.fun/2021/08/21/ctfhub-zhong-ssrf-shi-yong-post/</id>
+    <published>2021-08-21T15:12:01.482Z</published>
+    <updated>2021-08-21T15:12:46.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;审计flag-php&quot;&gt;&lt;a href=&quot;#审计flag-php&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/SSRF/"/>
+    
+      <category term="CTF" scheme="https://rollinon.fun/categories/SSRF/CTF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+      <category term="CTF" scheme="https://rollinon.fun/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTFHub中SSRF打Redis</title>
+    <link href="https://rollinon.fun/2021/08/21/ctfhub-zhong-ssrf-da-redis/"/>
+    <id>https://rollinon.fun/2021/08/21/ctfhub-zhong-ssrf-da-redis/</id>
+    <published>2021-08-21T15:10:37.612Z</published>
+    <updated>2021-08-21T15:11:37.666Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;Redis相关协议&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.redis.com.cn/redis-configuration/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/SSRF/"/>
+    
+      <category term="CTF" scheme="https://rollinon.fun/categories/SSRF/CTF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+      <category term="CTF" scheme="https://rollinon.fun/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTFHub中关于FastCGI协议的SSRF</title>
+    <link href="https://rollinon.fun/2021/08/21/ctfhub-zhong-guan-yu-fastcgi-xie-yi-de-ssrf/"/>
+    <id>https://rollinon.fun/2021/08/21/ctfhub-zhong-guan-yu-fastcgi-xie-yi-de-ssrf/</id>
+    <published>2021-08-21T15:10:30.093Z</published>
+    <updated>2021-08-21T15:10:30.094Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;解题步骤&quot;&gt;&lt;a href=&quot;#解题步骤&quot; class=&quot;headerlink&quot; title=&quot;解题步骤&quot;&gt;&lt;/a&gt;解题步骤&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;监听9000端口，因为PHP-FPM默认监听9000端口&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/SSRF/"/>
+    
+      <category term="CTF" scheme="https://rollinon.fun/categories/SSRF/CTF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+      <category term="CTF" scheme="https://rollinon.fun/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LD_PRELOAD</title>
+    <link href="https://rollinon.fun/2021/08/21/bypass-disable-function/"/>
+    <id>https://rollinon.fun/2021/08/21/bypass-disable-function/</id>
+    <published>2021-08-21T08:34:36.749Z</published>
+    <updated>2021-08-21T09:19:49.325Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;LD-PRELOAD&quot;&gt;&lt;a href=&quot;#LD-PRELOAD&quot; class=&quot;headerlink&quot; title=&quot;LD_PRELOAD&quot;&gt;&lt;/a&gt;LD_PRELOAD&lt;/h1&gt;&lt;h2 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LD_PRELOAD" scheme="https://rollinon.fun/categories/LD-PRELOAD/"/>
+    
+    
+      <category term="LD_PRELOA" scheme="https://rollinon.fun/tags/LD-PRELOA/"/>
+    
+      <category term="Bypass_disable_function" scheme="https://rollinon.fun/tags/Bypass-disable-function/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php伪协议总结</title>
+    <link href="https://rollinon.fun/2021/07/27/php-wei-xie-yi-zong-jie/"/>
+    <id>https://rollinon.fun/2021/07/27/php-wei-xie-yi-zong-jie/</id>
+    <published>2021-07-27T02:56:44.745Z</published>
+    <updated>2021-07-27T03:36:21.763Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;PHP伪协议&quot;&gt;&lt;a href=&quot;#PHP伪协议&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://rollinon.fun/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://rollinon.fun/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php伪随机数</title>
+    <link href="https://rollinon.fun/2021/07/27/php-wei-sui-ji-shu/"/>
+    <id>https://rollinon.fun/2021/07/27/php-wei-sui-ji-shu/</id>
+    <published>2021-07-27T02:56:44.737Z</published>
+    <updated>2021-07-27T03:36:38.195Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;脚本&lt;a href=&quot;https://www.openwall.com/php_mt_seed/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://rollinon.fun/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://rollinon.fun/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php黑魔法</title>
+    <link href="https://rollinon.fun/2021/07/27/php-hei-mo-fa/"/>
+    <id>https://rollinon.fun/2021/07/27/php-hei-mo-fa/</id>
+    <published>2021-07-27T02:56:44.729Z</published>
+    <updated>2021-07-27T03:36:54.922Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;当数组遇上string&quot;&gt;&lt;a href=&quot;#当数组遇上string&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://rollinon.fun/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://rollinon.fun/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>$_SERVER详解</title>
+    <link href="https://rollinon.fun/2021/07/27/server-xiang-jie/"/>
+    <id>https://rollinon.fun/2021/07/27/server-xiang-jie/</id>
+    <published>2021-07-27T02:56:44.713Z</published>
+    <updated>2021-07-27T03:23:46.595Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SERVER&quot;&gt;&lt;a href=&quot;#SERVER&quot; class=&quot;headerlink&quot; title=&quot;$_SERVER&quot;&gt;&lt;/a&gt;$_SERVER&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://rollinon.fun/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://rollinon.fun/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>报错注入详解</title>
+    <link href="https://rollinon.fun/2021/07/27/bao-cuo-zhu-ru-xiang-jie/"/>
+    <id>https://rollinon.fun/2021/07/27/bao-cuo-zhu-ru-xiang-jie/</id>
+    <published>2021-07-27T02:56:11.870Z</published>
+    <updated>2021-07-27T03:42:19.546Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;基于floor-的报错SQL语句&quot;&gt;&lt;a href=&quot;#基于floor-的报错SQL语句&quot; class=&quot;headerlink&quot; title=&quot;基于floor()的报错SQL语句&quot;&gt;&lt;/a&gt;基于floor()的报错SQL语句&lt;/h2&gt;&lt;pre
+        
+      
+    
+    </summary>
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/categories/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL注入</title>
+    <link href="https://rollinon.fun/2021/07/27/sql-zhu-ru/"/>
+    <id>https://rollinon.fun/2021/07/27/sql-zhu-ru/</id>
+    <published>2021-07-27T02:56:11.865Z</published>
+    <updated>2021-07-27T03:34:19.841Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL注入&quot;&gt;&lt;a href=&quot;#SQL注入&quot; class=&quot;headerlink&quot; title=&quot;SQL注入&quot;&gt;&lt;/a&gt;SQL注入&lt;/h1&gt;&lt;h2 id=&quot;联合注入&quot;&gt;&lt;a href=&quot;#联合注入&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/categories/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL注入_Bypass</title>
+    <link href="https://rollinon.fun/2021/07/27/sql-zhu-ru-bypass/"/>
+    <id>https://rollinon.fun/2021/07/27/sql-zhu-ru-bypass/</id>
+    <published>2021-07-27T02:56:11.860Z</published>
+    <updated>2021-07-27T03:34:54.241Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL注入-Bypass&quot;&gt;&lt;a href=&quot;#SQL注入-Bypass&quot; class=&quot;headerlink&quot; title=&quot;SQL注入_Bypass&quot;&gt;&lt;/a&gt;SQL注入_Bypass&lt;/h1&gt;&lt;h2 id=&quot;空格过滤&quot;&gt;&lt;a href=&quot;#空格过滤&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/categories/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prepared Statements</title>
+    <link href="https://rollinon.fun/2021/07/27/prepared-statements/"/>
+    <id>https://rollinon.fun/2021/07/27/prepared-statements/</id>
+    <published>2021-07-27T02:56:11.854Z</published>
+    <updated>2021-07-27T03:36:01.809Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MySQL的SQL预处理-Prepared&quot;&gt;&lt;a href=&quot;#MySQL的SQL预处理-Prepared&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/categories/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+    
+      <category term="SQL注入" scheme="https://rollinon.fun/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSRF应用场景</title>
+    <link href="https://rollinon.fun/2021/07/27/ssrf-ying-yong-chang-jing/"/>
+    <id>https://rollinon.fun/2021/07/27/ssrf-ying-yong-chang-jing/</id>
+    <published>2021-07-27T02:55:33.776Z</published>
+    <updated>2021-07-27T03:31:58.984Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;SSRF在Python中的利用&quot;&gt;&lt;a href=&quot;#SSRF在Python中的利用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/SSRF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSRF_Bypass</title>
+    <link href="https://rollinon.fun/2021/07/27/ssrf-bypass/"/>
+    <id>https://rollinon.fun/2021/07/27/ssrf-bypass/</id>
+    <published>2021-07-27T02:55:33.769Z</published>
+    <updated>2021-07-27T03:33:48.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SSRF-Bypass&quot;&gt;&lt;a href=&quot;#SSRF-Bypass&quot; class=&quot;headerlink&quot; title=&quot;SSRF_Bypass&quot;&gt;&lt;/a&gt;SSRF_Bypass&lt;/h1&gt;&lt;h2 id=&quot;URL&quot;&gt;&lt;a href=&quot;#URL&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/SSRF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSRF</title>
+    <link href="https://rollinon.fun/2021/07/27/ssrf/"/>
+    <id>https://rollinon.fun/2021/07/27/ssrf/</id>
+    <published>2021-07-27T02:55:33.762Z</published>
+    <updated>2021-07-27T03:34:00.795Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SSRF&quot;&gt;&lt;a href=&quot;#SSRF&quot; class=&quot;headerlink&quot; title=&quot;SSRF&quot;&gt;&lt;/a&gt;SSRF&lt;/h1&gt;&lt;h2 id=&quot;SSRF中URL的伪协议&quot;&gt;&lt;a href=&quot;#SSRF中URL的伪协议&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/SSRF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSRF中FastCGI本地搭建及原理利用</title>
+    <link href="https://rollinon.fun/2021/07/27/ssrf-zhong-fastcgi-ben-di-da-jian-ji-yuan-li-li-yong/"/>
+    <id>https://rollinon.fun/2021/07/27/ssrf-zhong-fastcgi-ben-di-da-jian-ji-yuan-li-li-yong/</id>
+    <published>2021-07-27T02:55:33.738Z</published>
+    <updated>2021-08-21T09:25:06.663Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bbs.ichunqiu.com/thread-58455-1-1.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="FastCGI" scheme="https://rollinon.fun/categories/FastCGI/"/>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/FastCGI/SSRF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+      <category term="FastCGI" scheme="https://rollinon.fun/tags/FastCGI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文件包含中的一些问题</title>
+    <link href="https://rollinon.fun/2021/07/27/wen-jian-bao-han-zhong-de-yi-xie-wen-ti/"/>
+    <id>https://rollinon.fun/2021/07/27/wen-jian-bao-han-zhong-de-yi-xie-wen-ti/</id>
+    <published>2021-07-27T02:55:15.920Z</published>
+    <updated>2021-07-27T03:25:55.012Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;文件包含中的一些问题&quot;&gt;&lt;a href=&quot;#文件包含中的一些问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="文件包含" scheme="https://rollinon.fun/categories/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
+    
+    
+      <category term="文件包含" scheme="https://rollinon.fun/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RCE防护</title>
+    <link href="https://rollinon.fun/2021/07/27/rce-fang-hu/"/>
+    <id>https://rollinon.fun/2021/07/27/rce-fang-hu/</id>
+    <published>2021-07-27T02:55:15.914Z</published>
+    <updated>2021-07-27T03:35:12.364Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;代码注入的防治：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;升级到PHP7.1，该版本对大部分常见的执行动态代码的函数进行了封堵。&lt;/li&gt;
+&lt;li&gt;php.ini中，关闭&lt;code&gt;allow_url_fopen&lt;/code&gt;。在打开它的情况下，可以通过&lt;code&gt;phar://&lt;/co
+        
+      
+    
+    </summary>
+    
+      <category term="RCE" scheme="https://rollinon.fun/categories/RCE/"/>
+    
+    
+      <category term="RCE" scheme="https://rollinon.fun/tags/RCE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RCE常见函数</title>
+    <link href="https://rollinon.fun/2021/07/27/rce-chang-jian-han-shu/"/>
+    <id>https://rollinon.fun/2021/07/27/rce-chang-jian-han-shu/</id>
+    <published>2021-07-27T02:55:15.909Z</published>
+    <updated>2021-07-27T03:35:31.019Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;php代码-命令执行漏洞常见危险函数&quot;&gt;&lt;a href=&quot;#php代码-命令执行漏洞常见危险函数&quot; class=&quot;headerlink&quot; title=&quot;php代码/命令执行漏洞常见危险函数&quot;&gt;&lt;/a&gt;php代码/命令执行漏洞常见危险函数&lt;/h1&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="RCE" scheme="https://rollinon.fun/categories/RCE/"/>
+    
+    
+      <category term="RCE" scheme="https://rollinon.fun/tags/RCE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RCE Bypass</title>
+    <link href="https://rollinon.fun/2021/07/27/rce-bypass/"/>
+    <id>https://rollinon.fun/2021/07/27/rce-bypass/</id>
+    <published>2021-07-27T02:55:15.902Z</published>
+    <updated>2021-07-27T03:35:44.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;RCE-Bypass&quot;&gt;&lt;a href=&quot;#RCE-Bypass&quot; class=&quot;headerlink&quot; title=&quot;RCE Bypass&quot;&gt;&lt;/a&gt;RCE Bypass&lt;/h1&gt;&lt;p&gt;参考&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="RCE" scheme="https://rollinon.fun/categories/RCE/"/>
+    
+    
+      <category term="RCE" scheme="https://rollinon.fun/tags/RCE/"/>
+    
+  </entry>
+  
+</feed>
