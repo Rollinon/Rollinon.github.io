@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rollinon.fun/"/>
-  <updated>2021-08-21T09:25:41.000Z</updated>
+  <updated>2021-09-16T16:27:32.052Z</updated>
   <id>https://rollinon.fun/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些关于.user.ini的知识</title>
+    <link href="https://rollinon.fun/2021/09/17/yi-xie-guan-yu.user.ini-de-zhi-shi/"/>
+    <id>https://rollinon.fun/2021/09/17/yi-xie-guan-yu.user.ini-de-zhi-shi/</id>
+    <published>2021-09-16T16:28:16.706Z</published>
+    <updated>2021-09-16T16:27:32.052Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一些关于-user-ini的知识&quot;&gt;&lt;a href=&quot;#一些关于-user-ini的知识&quot; class=&quot;headerlink&quot; title=&quot;一些关于.user.ini的知识&quot;&gt;&lt;/a&gt;一些关于.user.ini的知识&lt;/h1&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://rollinon.fun/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://rollinon.fun/tags/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>源码泄露</title>
@@ -520,32 +546,6 @@
     
     
       <category term="SQL注入" scheme="https://rollinon.fun/tags/SQL%E6%B3%A8%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OS命令注入Bypass</title>
-    <link href="https://rollinon.fun/2021/09/10/os-ming-ling-zhu-ru-bypass/"/>
-    <id>https://rollinon.fun/2021/09/10/os-ming-ling-zhu-ru-bypass/</id>
-    <published>2021-09-10T06:01:10.178Z</published>
-    <updated>2021-07-27T03:37:22.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Bypass一些命令注入限制的姿势&quot;&gt;&lt;a href=&quot;#Bypass一些命令注入限制的姿势&quot; class=&quot;headerlink&quot; title=&quot;Bypass一些命令注入限制的姿势&quot;&gt;&lt;/a&gt;Bypass一些命令注入限制的姿势&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="RCE" scheme="https://rollinon.fun/categories/RCE/"/>
-    
-    
-      <category term="RCE" scheme="https://rollinon.fun/tags/RCE/"/>
     
   </entry>
   
