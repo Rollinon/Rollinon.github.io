@@ -398,7 +398,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    538
+                    647
                 </div>
                 
 
@@ -416,7 +416,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一些关于-user-ini的知识"><a href="#一些关于-user-ini的知识" class="headerlink" title="一些关于.user.ini的知识"></a>一些关于.user.ini的知识</h1><h3 id="user-ini文件"><a href="#user-ini文件" class="headerlink" title=".user.ini文件"></a>.user.ini文件</h3><blockquote>
+                <h1 id="一些关于-user-ini的知识"><a href="#一些关于-user-ini的知识" class="headerlink" title="一些关于.user.ini的知识"></a>一些关于.user.ini的知识</h1><h2 id="user-ini文件"><a href="#user-ini文件" class="headerlink" title=".user.ini文件"></a>.user.ini文件</h2><blockquote>
 <p>自 PHP 5.3.0 起，PHP 支持基于每个目录的 INI 文件配置。此类文件 <em>仅</em>被 CGI／FastCGI SAPI 处理。此功能使得 PECL 的 htscanner 扩展作废。如果你的 PHP 以模块化运行在 Apache 里，则用 .htaccess 文件有同样效果。</p>
 <p>除了主 php.ini 之外，PHP 还会在每个目录下扫描 INI 文件，从被执行的 PHP 文件所在目录开始一直上升到 web 根目录（<a href="https://www.php.net/manual/zh/reserved.variables.server.php" target="_blank" rel="noopener">$_SERVER[‘DOCUMENT_ROOT’]</a> 所指定的）。如果被执行的 PHP 文件在 web 根目录之外，则只扫描该目录。</p>
 <p>在 .user.ini 风格的 INI 文件中只有具有 <strong><code>PHP_INI_PERDIR</code></strong> 和 <strong><code>PHP_INI_USER</code></strong> 模式的 INI 设置可被识别。</p>
@@ -440,6 +440,9 @@
 </li>
 </ul>
 <p><strong>这俩差别在于是在主文件前还是后包含指定文件</strong></p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>不管是nginx/apache/IIS，只要是以FastCGI运行的php都可以使用这个方法</p>
+<p>当某个网站是限制不允许.php文件上传的黑名单时，便可以上传.user.ini，再上传一个图片马，进行文件包含解析。不过有个前提是.user.ini同文件夹下有正常的php文件，否则不能被包含。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://wooyun.js.org/drops/user.ini%E6%96%87%E4%BB%B6%E6%9E%84%E6%88%90%E7%9A%84PHP%E5%90%8E%E9%97%A8.html" target="_blank" rel="noopener">user.ini文件构成的PHP后门</a></p>
 
             </div>
             <hr />
@@ -756,7 +759,7 @@
         <div class="col s12 m8 l8 copy-right">
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">23.4k</span>
+            <span class="white-color">23.5k</span>
             
 
             <br>
