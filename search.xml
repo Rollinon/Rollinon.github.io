@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SQL注入_Bypass</title>
+      <link href="/2021/09/17/sql-zhu-ru-bypass/"/>
+      <url>/2021/09/17/sql-zhu-ru-bypass/</url>
+      
+        <content type="html"><![CDATA[<h1 id="SQL注入-Bypass"><a href="#SQL注入-Bypass" class="headerlink" title="SQL注入_Bypass"></a>SQL注入_Bypass</h1><h2 id="注入点识别"><a href="#注入点识别" class="headerlink" title="注入点识别"></a>注入点识别</h2><p>当简单的and 1=1这种被waf拦截了，可以使用如下方法绕过：</p><pre><code>+,-,*,%,/,《,》,||,|,&amp;,&amp;&amp;,也可以将and换成or,&amp;&amp;,||等</code></pre><p>也可以不使用and或者or，直接使用异或截断：</p><pre><code>1^1^0,1^0^0</code></pre><h2 id="空白符"><a href="#空白符" class="headerlink" title="空白符"></a>空白符</h2><p>在SQL注入时当空格被过滤了，在MySQL中可以使用：</p><pre><code>%09%0a,%0b,%0c,%0d,%a0,%20,/**/</code></pre><p>语句中使用<code>()</code>嵌套绕过</p><h2 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a>注释符</h2><p>SQL注入中使用的注释符主要为：</p><pre><code>#,--+,/*xxx*/,/*!xxx*/，/*！50000xxx*/,在实际场景中可以将这些注释符嵌套应用</code></pre><h2 id="闭合"><a href="#闭合" class="headerlink" title="闭合"></a>闭合</h2><p>%00url截断</p><h2 id="函数过滤"><a href="#函数过滤" class="headerlink" title="函数过滤"></a>函数过滤</h2><p>类似a/**/nd绕过、双写绕过、大小写绕过</p><h2 id="过滤逗号"><a href="#过滤逗号" class="headerlink" title="过滤逗号"></a>过滤逗号</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token number">a</span> <span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token number">b</span> <span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token number">c</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="过滤"><a href="#过滤" class="headerlink" title="过滤="></a>过滤=</h2><p>使用<code>&lt;&gt;</code>、like、rlike、regexp</p><h2 id="过滤引号"><a href="#过滤引号" class="headerlink" title="过滤引号"></a>过滤引号</h2><p>十六进制、考虑是否是宽字节</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> SQL注入 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL注入 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【迎中秋】BabyExec WP</title>
       <link href="/2021/09/17/ying-zhong-qiu-babyexec/"/>
       <url>/2021/09/17/ying-zhong-qiu-babyexec/</url>
@@ -387,31 +412,6 @@
         <tags>
             
             <tag> SSRF </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>SQL注入_Bypass</title>
-      <link href="/2021/09/10/sql-zhu-ru-bypass/"/>
-      <url>/2021/09/10/sql-zhu-ru-bypass/</url>
-      
-        <content type="html"><![CDATA[<h1 id="SQL注入-Bypass"><a href="#SQL注入-Bypass" class="headerlink" title="SQL注入_Bypass"></a>SQL注入_Bypass</h1><h2 id="空格过滤"><a href="#空格过滤" class="headerlink" title="空格过滤"></a>空格过滤</h2><p>%a0</p><h2 id="闭合"><a href="#闭合" class="headerlink" title="闭合"></a>闭合</h2><p>%00url截断</p><h2 id="函数过滤"><a href="#函数过滤" class="headerlink" title="函数过滤"></a>函数过滤</h2><p>类似a/**/nd绕过</p><h2 id="过滤逗号"><a href="#过滤逗号" class="headerlink" title="过滤逗号"></a>过滤逗号</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token number">a</span> <span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token number">b</span> <span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token number">c</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> SQL注入 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> SQL注入 </tag>
             
         </tags>
       

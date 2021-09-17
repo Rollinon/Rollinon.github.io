@@ -1,3 +1,4 @@
+https://rollinon.fun/2021/09/17/sql-zhu-ru-bypass/
 https://rollinon.fun/2021/09/17/ying-zhong-qiu-babyexec/
 https://rollinon.fun/2021/09/17/yi-xie-guan-yu.user.ini-de-zhi-shi/
 https://rollinon.fun/2021/09/10/yuan-ma-xie-lu/
@@ -13,7 +14,6 @@ https://rollinon.fun/2021/09/10/ssrf-ying-yong-chang-jing/
 https://rollinon.fun/2021/09/10/ssrf-zhong-fastcgi-ben-di-da-jian-ji-yuan-li-li-yong/
 https://rollinon.fun/2021/09/10/ssrf-bypass/
 https://rollinon.fun/2021/09/10/ssrf/
-https://rollinon.fun/2021/09/10/sql-zhu-ru-bypass/
 https://rollinon.fun/2021/09/10/sql-zhu-ru/
 https://rollinon.fun/2021/09/10/rce-fang-hu/
 https://rollinon.fun/2021/09/10/rce-chang-jian-han-shu/

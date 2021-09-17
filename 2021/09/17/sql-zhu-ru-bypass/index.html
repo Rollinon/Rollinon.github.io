@@ -8,11 +8,8 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="SQL注入_Bypass空格过滤%a0
-闭合%00url截断
-函数过滤类似a/**/nd绕过
-过滤逗号select 1,2,3;
-select * from ((select 1)a join (select 2)b join (selec">
+    <meta name="description" content="SQL注入_Bypass注入点识别当简单的and 1=1这种被waf拦截了，可以使用如下方法绕过：
++,-,*,%,/,《,》,||,|,&amp;amp;,&amp;amp;&amp;amp;,也可以将and换成or,&amp;amp;&amp;amp;,||等也可以不使用an">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -387,7 +384,7 @@ select * from ((select 1)a join (select 2)b join (selec">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-10
+                    2021-09-17
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -401,7 +398,7 @@ select * from ((select 1)a join (select 2)b join (selec">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    44
+                    210
                 </div>
                 
 
@@ -419,11 +416,17 @@ select * from ((select 1)a join (select 2)b join (selec">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SQL注入-Bypass"><a href="#SQL注入-Bypass" class="headerlink" title="SQL注入_Bypass"></a>SQL注入_Bypass</h1><h2 id="空格过滤"><a href="#空格过滤" class="headerlink" title="空格过滤"></a>空格过滤</h2><p>%a0</p>
-<h2 id="闭合"><a href="#闭合" class="headerlink" title="闭合"></a>闭合</h2><p>%00url截断</p>
-<h2 id="函数过滤"><a href="#函数过滤" class="headerlink" title="函数过滤"></a>函数过滤</h2><p>类似a/**/nd绕过</p>
+                <h1 id="SQL注入-Bypass"><a href="#SQL注入-Bypass" class="headerlink" title="SQL注入_Bypass"></a>SQL注入_Bypass</h1><h2 id="注入点识别"><a href="#注入点识别" class="headerlink" title="注入点识别"></a>注入点识别</h2><p>当简单的and 1=1这种被waf拦截了，可以使用如下方法绕过：</p>
+<pre><code>+,-,*,%,/,《,》,||,|,&amp;,&amp;&amp;,也可以将and换成or,&amp;&amp;,||等</code></pre><p>也可以不使用and或者or，直接使用异或截断：</p>
+<pre><code>1^1^0,1^0^0</code></pre><h2 id="空白符"><a href="#空白符" class="headerlink" title="空白符"></a>空白符</h2><p>在SQL注入时当空格被过滤了，在MySQL中可以使用：</p>
+<pre><code>%09%0a,%0b,%0c,%0d,%a0,%20,/**/</code></pre><p>语句中使用<code>()</code>嵌套绕过</p>
+<h2 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a>注释符</h2><p>SQL注入中使用的注释符主要为：</p>
+<pre><code>#,--+,/*xxx*/,/*!xxx*/，/*！50000xxx*/,在实际场景中可以将这些注释符嵌套应用</code></pre><h2 id="闭合"><a href="#闭合" class="headerlink" title="闭合"></a>闭合</h2><p>%00url截断</p>
+<h2 id="函数过滤"><a href="#函数过滤" class="headerlink" title="函数过滤"></a>函数过滤</h2><p>类似a/**/nd绕过、双写绕过、大小写绕过</p>
 <h2 id="过滤逗号"><a href="#过滤逗号" class="headerlink" title="过滤逗号"></a>过滤逗号</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span>
 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token number">a</span> <span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token number">b</span> <span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token number">c</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="过滤"><a href="#过滤" class="headerlink" title="过滤="></a>过滤=</h2><p>使用<code>&lt;&gt;</code>、like、rlike、regexp</p>
+<h2 id="过滤引号"><a href="#过滤引号" class="headerlink" title="过滤引号"></a>过滤引号</h2><p>十六进制、考虑是否是宽字节</p>
 
             </div>
             <hr />
@@ -462,7 +465,7 @@ select * from ((select 1)a join (select 2)b join (selec">
         repo: 'Rollinon/rollinon.github.io',
         owner: 'Rollinon',
         admin: "Rollinon",
-        id: '2021/09/10/sql-zhu-ru-bypass/',
+        id: '2021/09/17/sql-zhu-ru-bypass/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -483,90 +486,30 @@ select * from ((select 1)a join (select 2)b join (selec">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/10/ssrf/">
+                <a href="/2021/09/17/sql-zhu-ru-bypass/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="SSRF">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="SQL注入_Bypass">
                         
-                        <span class="card-title">SSRF</span>
+                        <span class="card-title">SQL注入_Bypass</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SSRFSSRF中URL的伪协议类型
-file://
-dict://
-sftp://
-ldap://
-tftp://
-gopher://
-
-
-参考
-https://xz.aliyun.com/t/2115
-https://zhuanlan.
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/SSRF/" class="post-category" target="_blank">
-                                    SSRF
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/SSRF/" target="_blank">
-                        <span class="chip bg-color">SSRF</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/09/10/sql-zhu-ru/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SQL注入">
-                        
-                        <span class="card-title">SQL注入</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            SQL注入联合注入报错注入group by重复键冲突
-多种形式payload：
-select count(*),(concat(floor(rand(0)*2),'%',(select version()),'%'))x from info
+                            SQL注入_Bypass注入点识别当简单的and 1=1这种被waf拦截了，可以使用如下方法绕过：
++,-,*,%,/,《,》,||,|,&amp;,&amp;&amp;,也可以将and换成or,&amp;&amp;,||等也可以不使用an
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-17
                             </span>
                         <span class="publish-author">
                             
@@ -580,11 +523,85 @@ select count(*),(concat(floor(rand(0)*2),'%',(select version()),'%'))x from info
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" target="_blank">
                         <span class="chip bg-color">SQL注入</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/09/17/ying-zhong-qiu-babyexec/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【迎中秋】BabyExec WP">
+                        
+                        <span class="card-title">【迎中秋】BabyExec WP</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            【迎中秋】BabyExec WP解题步骤看源码
+
+这个是md5强碰撞+无符号RCE
+使用fastcoll产生两个相同md5值的文件
+建立msg.txt
+
+将文件拖到fastcoll上，fastcoll会自动生成两个文件
+
+用下面这个脚本去生
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CTF/" class="post-category" target="_blank">
+                                    CTF
+                                </a>
+                            
+                            <a href="/categories/CTF/WP/" class="post-category" target="_blank">
+                                    WP
+                                </a>
+                            
+                            <a href="/categories/CTF/WP/RCE/" class="post-category" target="_blank">
+                                    RCE
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CTF/" target="_blank">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
+                    <a href="/tags/RCE/" target="_blank">
+                        <span class="chip bg-color">RCE</span>
+                    </a>
+                    
+                    <a href="/tags/WP/" target="_blank">
+                        <span class="chip bg-color">WP</span>
                     </a>
                     
                 </div>
@@ -719,7 +736,7 @@ select count(*),(concat(floor(rand(0)*2),'%',(select version()),'%'))x from info
         <div class="col s12 m8 l8 copy-right">
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">23.5k</span>
+            <span class="white-color">23.7k</span>
             
 
             <br>
