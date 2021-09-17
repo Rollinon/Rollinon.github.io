@@ -282,6 +282,296 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getHou
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2021/09/10/ctfshow-web41/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CTFshow_web41">
+                            
+                            <span class="card-title">CTFshow_web41</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            CTFshow_web41
+参考
+https://blog.csdn.net/miuzzx/article/details/108569080
+https://wp.ctf.show/d/137-ctfshow-web-web41
+http
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF/" class="post-category" target="_blank">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF/" target="_blank">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/10/ctfhub-zhong-guan-yu-fastcgi-xie-yi-de-ssrf/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="CTFHub中关于FastCGI协议的SSRF">
+                            
+                            <span class="card-title">CTFHub中关于FastCGI协议的SSRF</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            解题步骤
+监听9000端口，因为PHP-FPM默认监听9000端口
+
+exp如下：
+#ssrf_fastcgi_fpm.py
+import socket
+import random
+import argparse
+import sys
+fr
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/SSRF/" class="post-category" target="_blank">
+                                    SSRF
+                                </a>
+                                
+                                <a href="/categories/SSRF/CTF/" class="post-category" target="_blank">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/SSRF/" target="_blank">
+                            <span class="chip bg-color">SSRF</span>
+                        </a>
+                        
+                        <a href="/tags/CTF/" target="_blank">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/10/ctfhub-zhong-ssrf-da-redis/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CTFHub中SSRF打Redis">
+                            
+                            <span class="card-title">CTFHub中SSRF打Redis</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            
+Redis相关协议
+Redis配置详解
+浅析Redis中SSRF的利用
+
+这题进行写文件后执行命令。
+Redis命令如下：
+flushall
+set 1 '&lt;?php eval($_GET["cmd"]);?>'
+config se
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/SSRF/" class="post-category" target="_blank">
+                                    SSRF
+                                </a>
+                                
+                                <a href="/categories/SSRF/CTF/" class="post-category" target="_blank">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/SSRF/" target="_blank">
+                            <span class="chip bg-color">SSRF</span>
+                        </a>
+                        
+                        <a href="/tags/CTF/" target="_blank">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/10/ctfhub-zhong-ssrf-shi-yong-post/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="CTFHub中SSRF使用POST">
+                            
+                            <span class="card-title">CTFHub中SSRF使用POST</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            审计flag.php这里有一个点是$_SERVER["REMOTE_ADDR"]是“可靠”的请求端ip地址，是服务端在进行TCP握手时获得的，从技术上来说是几乎不可能伪造的，与$_SERVER["HTTP_X_FORWARDED_FOR"]
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/SSRF/" class="post-category" target="_blank">
+                                    SSRF
+                                </a>
+                                
+                                <a href="/categories/SSRF/CTF/" class="post-category" target="_blank">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/SSRF/" target="_blank">
+                            <span class="chip bg-color">SSRF</span>
+                        </a>
+                        
+                        <a href="/tags/CTF/" target="_blank">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/10/bypass-disable-function/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LD_PRELOAD">
+                            
+                            <span class="card-title">LD_PRELOAD</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            LD_PRELOAD目的
+通过LD_PRELOAD方法绕过disabled_functions限制
+
+思路绕过disabled_functions的四种手法
+
+攻击后端组件，寻找存在命令注入的web应用常用后端组件，如ImageMagick
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/LD-PRELOAD/" class="post-category" target="_blank">
+                                    LD_PRELOAD
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/LD-PRELOA/" target="_blank">
+                            <span class="chip bg-color">LD_PRELOA</span>
+                        </a>
+                        
+                        <a href="/tags/Bypass-disable-function/" target="_blank">
+                            <span class="chip bg-color">Bypass_disable_function</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2021/09/10/server-xiang-jie/" target="_blank">
                         <div class="card-image">
                             
@@ -366,7 +656,7 @@ $_SERVER[‘HTT
         <div class="col s12 m8 l8 copy-right">
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">23.7k</span>
+            <span class="white-color">25.5k</span>
             
 
             <br>

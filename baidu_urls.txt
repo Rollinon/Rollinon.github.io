@@ -1,4 +1,7 @@
+https://rollinon.fun/2021/09/17/wang-ding-bei-2020-qing-long-zu-areuserialz/
+https://rollinon.fun/2021/09/17/ji-ke-da-tiao-zhan-2019-hardsql/
 https://rollinon.fun/2021/09/17/sql-zhu-ru-bypass/
+https://rollinon.fun/2021/09/17/suctf-2019-checkin/
 https://rollinon.fun/2021/09/17/ying-zhong-qiu-babyexec/
 https://rollinon.fun/2021/09/17/yi-xie-guan-yu.user.ini-de-zhi-shi/
 https://rollinon.fun/2021/09/10/yuan-ma-xie-lu/
@@ -24,6 +27,8 @@ https://rollinon.fun/2021/09/10/http-xie-yi/
 https://rollinon.fun/2021/09/10/git-xie-lu/
 https://rollinon.fun/2021/09/10/git-xue-xi/
 https://rollinon.fun/2021/09/10/ctf-web-an-quan-zhong-de-yi-xie-rao-guo/
+https://rollinon.fun/2021/09/10/ctfshow-web55/
+https://rollinon.fun/2021/09/10/ctfshow-web41/
 https://rollinon.fun/2021/09/10/ctfhub-zhong-guan-yu-fastcgi-xie-yi-de-ssrf/
 https://rollinon.fun/2021/09/10/ctfhub-zhong-ssrf-da-redis/
 https://rollinon.fun/2021/09/10/ctfhub-zhong-ssrf-shi-yong-post/
