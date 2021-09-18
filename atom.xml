@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rollinon.fun/"/>
-  <updated>2021-09-17T12:44:17.653Z</updated>
+  <updated>2021-09-18T11:56:26.009Z</updated>
   <id>https://rollinon.fun/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CTFShow_web259</title>
+    <link href="https://rollinon.fun/2021/09/18/ctfshow-web259/"/>
+    <id>https://rollinon.fun/2021/09/18/ctfshow-web259/</id>
+    <published>2021-09-18T11:57:00.983Z</published>
+    <updated>2021-09-18T11:56:26.009Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CTFShow-web259&quot;&gt;&lt;a href=&quot;#CTFShow-web259&quot; class=&quot;headerlink&quot; title=&quot;CTFShow_web259&quot;&gt;&lt;/a&gt;CTFShow_web259&lt;/h1&gt;&lt;h2 id=&quot;知识点&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="反序列化" scheme="https://rollinon.fun/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+      <category term="SSRF" scheme="https://rollinon.fun/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/SSRF/"/>
+    
+      <category term="SoapClient" scheme="https://rollinon.fun/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/SSRF/SoapClient/"/>
+    
+      <category term="CRLF" scheme="https://rollinon.fun/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/SSRF/SoapClient/CRLF/"/>
+    
+    
+      <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
+    
+      <category term="反序列化" scheme="https://rollinon.fun/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+      <category term="SoapClient" scheme="https://rollinon.fun/tags/SoapClient/"/>
+    
+      <category term="CRLF" scheme="https://rollinon.fun/tags/CRLF/"/>
+    
+  </entry>
   
   <entry>
     <title>【网鼎杯 2020 青龙组】AreUSerialz</title>
@@ -44,9 +82,9 @@
     
       <category term="CTF" scheme="https://rollinon.fun/tags/CTF/"/>
     
-      <category term="WP" scheme="https://rollinon.fun/tags/WP/"/>
-    
       <category term="反序列化" scheme="https://rollinon.fun/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+      <category term="WP" scheme="https://rollinon.fun/tags/WP/"/>
     
   </entry>
   
@@ -549,32 +587,6 @@
     
     
       <category term="SSRF" scheme="https://rollinon.fun/tags/SSRF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL注入</title>
-    <link href="https://rollinon.fun/2021/09/10/sql-zhu-ru/"/>
-    <id>https://rollinon.fun/2021/09/10/sql-zhu-ru/</id>
-    <published>2021-09-10T06:01:11.137Z</published>
-    <updated>2021-07-27T03:34:19.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SQL注入&quot;&gt;&lt;a href=&quot;#SQL注入&quot; class=&quot;headerlink&quot; title=&quot;SQL注入&quot;&gt;&lt;/a&gt;SQL注入&lt;/h1&gt;&lt;h2 id=&quot;联合注入&quot;&gt;&lt;a href=&quot;#联合注入&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="SQL注入" scheme="https://rollinon.fun/categories/SQL%E6%B3%A8%E5%85%A5/"/>
-    
-    
-      <category term="SQL注入" scheme="https://rollinon.fun/tags/SQL%E6%B3%A8%E5%85%A5/"/>
     
   </entry>
   
