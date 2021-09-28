@@ -22,7 +22,6 @@ https://rollinon.fun/2021/09/10/ssrf/
 https://rollinon.fun/2021/09/10/sql-zhu-ru/
 https://rollinon.fun/2021/09/10/rce-fang-hu/
 https://rollinon.fun/2021/09/10/rce-chang-jian-han-shu/
-https://rollinon.fun/2021/09/10/rce-bypass/
 https://rollinon.fun/2021/09/10/prepared-statements/
 https://rollinon.fun/2021/09/10/os-ming-ling-zhu-ru-bypass/
 https://rollinon.fun/2021/09/10/http-xie-yi/
